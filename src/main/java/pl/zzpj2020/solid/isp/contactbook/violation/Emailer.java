@@ -1,6 +1,6 @@
 package pl.zzpj2020.solid.isp.contactbook.violation;
 
-class Emailer {
+class Emailer implements Email{
 	
 	
 	public void sendMessage(Contact emailable, String subject, String body) {

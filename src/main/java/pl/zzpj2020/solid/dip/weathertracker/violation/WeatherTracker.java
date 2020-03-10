@@ -3,22 +3,20 @@ package pl.zzpj2020.solid.dip.weathertracker.violation;
 
 public class WeatherTracker {
     String currentConditions;
-    Phone phone;
-    Emailer emailer;
+    Device device;
 
-    public WeatherTracker() {
-        phone = new Phone();  // BAD
-        emailer = new Emailer();     // BAD
+    public WeatherTracker(Device device) {
+        this.device = device;
     }
 
     public void setCurrentConditions(String weatherDescription) {
         this.currentConditions = weatherDescription;
         if (weatherDescription == "rainy") {
-            String alert = phone.generateWeatherAlert(weatherDescription);
+            String alert = device.generateWeatherAlert(weatherDescription);
             System.out.print(alert);
         }
         if (weatherDescription == "sunny") {
-            String alert = emailer.generateWeatherAlert(weatherDescription);
+            String alert = device.generateWeatherAlert(weatherDescription);
             System.out.print(alert);
         }
     }

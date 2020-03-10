@@ -2,8 +2,9 @@ package pl.zzpj2020.solid.srp.book.violation;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
-public class BookAndPrinter {
+public class Book {
 
     private int currentPage = 0;
 
@@ -29,11 +30,8 @@ public class BookAndPrinter {
         currentPage ++;
     }
 
-    /**
-     * Prints the current page.
-     */
-    public void printCurrentPage() {
-        System.out.println(pages.get(currentPage));
+    public Set<Map.Entry<Integer, String>> getPages(){
+        return pages.entrySet();
     }
 
     /**
@@ -61,16 +59,5 @@ public class BookAndPrinter {
         return indexOnShelf;
     }
 
-    /**
-     * Prints all pages
-     * @return
-     */
-    public String printAllPages() {
 
-        String allPages = new String();
-        for(Map.Entry<Integer, String> page : pages.entrySet()) {
-            allPages += (page.getKey() + " " + page.getValue());
-        }
-        return  allPages;
-    }
 }

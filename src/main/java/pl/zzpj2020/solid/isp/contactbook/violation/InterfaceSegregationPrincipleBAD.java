@@ -2,8 +2,8 @@ package pl.zzpj2020.solid.isp.contactbook.violation;
 
 class InterfaceSegregationPrincipleBAD {
 	
-	Emailer emailer;
-	Dialler dialler;
+	Email emailer;
+	Call dialler;
 	
 	public InterfaceSegregationPrincipleBAD() {
 		emailer = new Emailer();
